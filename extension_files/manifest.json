@@ -1,0 +1,25 @@
+{
+"manifest_version": 3,
+"name": "Phishing Extensions",
+"version": "0.1",
+"description": "Test extension",
+
+"permissions": ["activeTab", "tabs", "storage"],
+
+"action": {
+	"default_popup": "popup.html"
+},
+"background": {
+	"service_worker": "background.js",
+	"scripts": ["background.js"]
+},
+"host_permissions": [
+	"https://urlscan.io/*"
+],
+"content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content_script.js"]
+  }
+]
+}
